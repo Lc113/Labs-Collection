@@ -68,7 +68,7 @@ $items = scandir($currentPath);
 // 过滤出文件夹名称
 $folders = array_filter($items, function ($item) use ($currentPath) {
     // 排除当前目录（.）和上级目录（..）
-    return is_dir($currentPath . DIRECTORY_SEPARATOR . $item) && $item != '.' && $item != '..' && $item != 'error';
+    return is_dir($currentPath . DIRECTORY_SEPARATOR . $item) && $item != '.' && $item != '..' && $item != '.git' && $item != 'error';
 });
 echo "<div class='contain'>";
 echo "<h1 style='color:rgb(255,255,255)'>Cyber-Range Index</h1>";
