@@ -64,13 +64,13 @@ if( isset( $_POST[ 'Login' ] ) && isset ($_POST['username']) && isset ($_POST['p
 		$last_login   = $row[ 'last_login' ];
 
 		// Login successful
-		$html .= "<p>Welcome to the password protected area <em>{$user}</em></p>";
+		$html .= "<p>欢迎来到密码保护区域 <em>{$user}</em></p>";
 		$html .= "<img src=\"{$avatar}\" />";
 
 		// Had the account been locked out since last login?
 		if( $failed_login >= $total_failed_login ) {
-			$html .= "<p><em>Warning</em>: Someone might of been brute forcing your account.</p>";
-			$html .= "<p>Number of login attempts: <em>{$failed_login}</em>.<br />Last login attempt was at: <em>{$last_login}</em>.</p>";
+			$html .= "<p><em>Warning</em>: 可能有人正在爆破你的账户.</p>";
+			$html .= "<p>尝试登陆的次数: <em>{$failed_login}</em>.<br />最后一次登陆在: <em>${last_login}</em>.</p>";
 		}
 
 		// Reset bad login count
@@ -82,7 +82,7 @@ if( isset( $_POST[ 'Login' ] ) && isset ($_POST['username']) && isset ($_POST['p
 		sleep( rand( 2, 4 ) );
 
 		// Give the user some feedback
-		$html .= "<pre><br />Username and/or password incorrect.<br /><br/>Alternative, the account has been locked because of too many failed logins.<br />If this is the case, <em>please try again in {$lockout_time} minutes</em>.</pre>";
+		$html .= "<pre><br />用户名和/或密码不匹配.<br /><br/>如果你尝试很多次错误的密码请求会被暂时封锁登陆.<br />如果遇到了这种情况, <em>请在 {$lockout_time} 分钟后继续尝试</em>.</pre>";
 
 		// Update bad login count
 		$data = $db->prepare( 'UPDATE users SET failed_login = (failed_login + 1) WHERE user = (:user) LIMIT 1;' );

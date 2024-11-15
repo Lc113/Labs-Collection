@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( ) );
+dvwaPageStartup( array( 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Setup' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -24,11 +24,11 @@ if( isset( $_POST[ 'create_db' ] ) ) {
 	}
 	elseif($DBMS == 'PGSQL') {
 		// include_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/DBMS/PGSQL.php';
-		dvwaMessagePush( 'PostgreSQL is not yet fully supported.' );
+		dvwaMessagePush( 'PostgreSQL还没有正式支持.' );
 		dvwaPageReload();
 	}
 	else {
-		dvwaMessagePush( 'ERROR: Invalid database selected. Please review the config file syntax.' );
+		dvwaMessagePush( 'ERROR: 数据库选择错误. 请查看配置文件是否有错误.' );
 		dvwaPageReload();
 	}
 }
@@ -45,17 +45,17 @@ if( $DBMS == 'MySQL' ) {
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Database Setup <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/spanner.png\" /></h1>
+	<h1>数据库初始化 <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/spanner.png\" /></h1>
 
-	<p>Click on the 'Create / Reset Database' button below to create or reset your database.<br />
-	If you get an error make sure you have the correct user credentials in: <em>" . realpath(  getcwd() . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.inc.php" ) . "</em></p>
+	<p>点击下方'创建 / 重置数据库' 按钮来重置或者创建数据库.<br />
+	如果出现错误请检查你的用户凭证: <em>" . realpath(  getcwd() . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.inc.php" ) . "</em></p>
 
-	<p>If the database already exists, <em>it will be cleared and the data will be reset</em>.<br />
-	You can also use this to reset the administrator credentials (\"<em>admin</em> // <em>password</em>\") at any stage.</p>
+	<p>如果数据库已存在, <em>数据将被清除且新会被重置</em>.<br />
+	你也可以使用这个凭证来重设密码(\"<em>admin</em> // <em>password</em>\").</p>
 	<hr />
 	<br />
 
-	<h2>Setup Check</h2>
+	<h2>初始化检查</h2>
 
 	{$SERVER_NAME}<br />
 	<br />
@@ -63,9 +63,10 @@ $page[ 'body' ] .= "
 	<br />
 	PHP version: <em>" . phpversion() . "</em><br />
 	{$phpDisplayErrors}<br />
-	{$phpDisplayStartupErrors}<br />
+	{$phpSafeMode}<br/ >
 	{$phpURLInclude}<br/ >
 	{$phpURLFopen}<br />
+	{$phpMagicQuotes}<br />
 	{$phpGD}<br />
 	{$phpMySQL}<br />
 	{$phpPDO}<br />
@@ -80,21 +81,23 @@ $page[ 'body' ] .= "
 	{$DVWARecaptcha}<br />
 	<br />
 	{$DVWAUploadsWrite}<br />
+	{$DVWAPHPWrite}<br />
+	<br />
+	<br />
 	{$bakWritable}
 	<br />
+	<i><span class=\"failure\">状态为红</span>, 说明在使用模块中这里有一些问题.</i><br />
 	<br />
-	<i><span class=\"failure\">Status in red</span>, indicate there will be an issue when trying to complete some modules.</i><br />
-	<br />
-	If you see disabled on either <i>allow_url_fopen</i> or <i>allow_url_include</i>, set the following in your php.ini file and restart Apache.<br />
-	<pre><code>allow_url_fopen = On
-allow_url_include = On</code></pre>
-	These are only required for the file inclusion labs so unless you want to play with those, you can ignore them.
+	如果在 <i>allow_url_fopen</i> 或 <i>allow_url_include</i>上状态为红色, 检查你的php.ini配置文件然后重启Apache.<br />
+	<pre><code>allow_url_fopen = 开启
+allow_url_include = 开启</code></pre>
+	这些功能仅在文件包含(File Inclusion)模块中是必需的，除非您想使用这个功能，否则可以忽略它们.
 
 	<br /><br /><br />
 
 	<!-- Create db button -->
 	<form action=\"#\" method=\"post\">
-		<input name=\"create_db\" type=\"submit\" value=\"Create / Reset Database\">
+		<input name=\"create_db\" type=\"submit\" value=\"创建 / 重置数据库\">
 		" . tokenField() . "
 	</form>
 	<br />

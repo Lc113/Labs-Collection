@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: SQL Injection (Blind)' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -15,7 +15,7 @@ dvwaDatabaseConnect();
 
 $method            = 'GET';
 $vulnerabilityFile = '';
-switch( dvwaSecurityLevelGet() ) {
+switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
 		$vulnerabilityFile = 'low.php';
 		break;
@@ -45,19 +45,19 @@ if( ini_get( 'safe_mode' ) == true ) {
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: SQL Injection (Blind)</h1>
+	<h1>漏洞：数据库盲注（SQL Injection (Blind)）</h1>
 
 	{$WarningHtml}
 
 	<div class=\"vulnerable_code_area\">";
 if( $vulnerabilityFile == 'high.php' ) {
-	$page[ 'body' ] .= "Click <a href=\"#\" onclick=\"javascript:popUp('cookie-input.php');return false;\">here to change your ID</a>.";
+	$page[ 'body' ] .= "<a href=\"#\" onclick=\"javascript:popUp('cookie-input.php');return false;\">点击这里来更改你的ID</a>.";
 }
 else {
 	$page[ 'body' ] .= "
 		<form action=\"#\" method=\"{$method}\">
 			<p>
-				User ID:";
+				用户ID:";
 	if( $vulnerabilityFile == 'medium.php' ) {
 		$page[ 'body' ] .= "\n				<select name=\"id\">";
 		$query  = "SELECT COUNT(*) FROM users;";
@@ -70,7 +70,7 @@ else {
 	else
 		$page[ 'body' ] .= "\n				<input type=\"text\" size=\"15\" name=\"id\">";
 
-	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Submit\">
+	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"提交\">
 			</p>\n";
 
 	if( $vulnerabilityFile == 'impossible.php' )
@@ -83,8 +83,9 @@ $page[ 'body' ] .= "
 		{$html}
 	</div>
 
-	<h2>More Information</h2>
+	<h2>更多参考信息</h2>
 	<ul>
+		<li>" . dvwaExternalLinkUrlGet( 'https://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/SQL_injection' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/Blind_SQL_Injection' ) . "</li>

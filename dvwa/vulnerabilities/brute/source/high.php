@@ -25,13 +25,13 @@ if( isset( $_GET[ 'Login' ] ) ) {
 		$avatar = $row["avatar"];
 
 		// Login successful
-		$html .= "<p>Welcome to the password protected area {$user}</p>";
+		$html .= "<p>欢迎来到密码保护区域{$user}</p>";
 		$html .= "<img src=\"{$avatar}\" />";
 	}
 	else {
 		// Login failed
 		sleep( rand( 0, 3 ) );
-		$html .= "<pre><br />Username and/or password incorrect.</pre>";
+		$html .= "<pre><br />用户名和/或密码不匹配.</pre>";
 	}
 
 	((is_null($___mysqli_res = mysqli_close($GLOBALS["___mysqli_ston"]))) ? false : $___mysqli_res);

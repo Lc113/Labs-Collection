@@ -19,7 +19,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		// Can we move the file to the upload folder?
 		if( !move_uploaded_file( $uploaded_tmp, $target_path ) ) {
 			// No
-			$html .= '<pre>Your image was not uploaded.</pre>';
+			$html .= '<pre>你的文件没有被上传.</pre>';
 		}
 		else {
 			// Yes!
@@ -28,7 +28,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 	}
 	else {
 		// Invalid file
-		$html .= '<pre>Your image was not uploaded. We can only accept JPEG or PNG images.</pre>';
+		$html .= '<pre>你的文件没有上传成功，我们只接受jpeg或png格式的文件.</pre>';
 	}
 }
 

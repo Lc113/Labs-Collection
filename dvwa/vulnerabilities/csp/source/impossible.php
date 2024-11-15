@@ -13,9 +13,9 @@ $page[ 'body' ] .= "
 }
 $page[ 'body' ] .= '
 <form name="csp" method="POST">
-	<p>Unlike the high level, this does a JSONP call but does not use a callback, instead it hardcodes the function to call.</p><p>The CSP settings only allow external JavaScript on the local server and no inline code.</p>
+	<p>这不同于高等级, 这里用了JSONP call函数但没有用到callback函数, 替换硬编码来请求.</p><p>CSP设置只允许内部JS在本地服务器上运行且没有内联代码.</p>
 	<p>1+2+3+4+5=<span id="answer"></span></p>
-	<input type="button" id="solve" value="Solve the sum" />
+	<input type="button" id="solve" value="求和" />
 </form>
 
 <script src="source/impossible.js"></script>

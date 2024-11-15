@@ -1,181 +1,103 @@
+# Translation
+目前翻译正在完善，最后的翻译工作就是各大漏洞的说明，保持一天两更，一更一篇说明翻译。
+翻译：@[Basyaact](https://github.com/Basyaact),@[inVains](https://github.com/inVains)
+全环境已汉化，供中国用户使用，如有侵权，请联系邮箱：en.crypt@icloud.com
+README部分来自机器翻译，请以原文为准[README.md](README_en.md)
+不是机器翻译，不是机器翻译！！
+- - -
+
 # DAMN VULNERABLE WEB APPLICATION
 
-Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goal is to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to aid both students & teachers to learn about web application security in a controlled class room environment.
-
-The aim of DVWA is to **practice some of the most common web vulnerabilities**, with **various levels of difficulty**, with a simple straightforward interface.
-Please note, there are **both documented and undocumented vulnerabilities** with this software. This is intentional. You are encouraged to try and discover as many issues as possible.
+Damn Vulnerable Web Application (DVWA)(译注：可以直译为："该死的"不安全Web应用网站)，是一个编码糟糕的、易受攻击的 PHP/MySQL Web应用程序。 它的主要目的是帮助安全专业人员在合法的环境中，测试他们的技能和工具，帮助 Web 开发人员更好地了解如何增强 Web 应用程序的安全性，并帮助学生和教师在受控的课堂环境中，了解 Web 应用程序的安全。
+    
+DVWA的具体目标是通过简单明了的界面，来**演练一些最常见的 Web 漏洞**，这些漏洞具有**不同的难度级别**。 请注意，此软件**存在说明和未说明的漏洞**。 这是故意的。 我们鼓励您尝试并发现尽可能多的安全问题。
 - - -
 
-## WARNING!
+## 警告！
 
-Damn Vulnerable Web Application is damn vulnerable! **Do not upload it to your hosting provider's public html folder or any Internet facing servers**, as they will be compromised. It is recommended using a virtual machine (such as [VirtualBox](https://www.virtualbox.org/) or [VMware](https://www.vmware.com/)), which is set to NAT networking mode. Inside a guest machine, you can download and install [XAMPP](https://www.apachefriends.org/) for the web server and database.
+DVWA十分易受攻击！  **不要将其上传到您的云服务器的公共 html 文件夹或任何面向 Internet 的服务器**，因为它们会受到危害。 建议使用虚拟机（如[VirtualBox](https://www.virtualbox.org/) 或[VMware](https://www.vmware.com/)），设置为NAT组网方式。在客机（guest machine）中，您可以下载并安装 [XAMPP](https://www.apachefriends.org/en/xampp.html) 作为 Web 服务器和数据库。
 
-### Disclaimer
+### 免责声明
 
-We do not take responsibility for the way in which any one uses this application (DVWA). We have made the purposes of the application clear and it should not be used maliciously. We have given warnings and taken measures to prevent users from installing DVWA on to live web servers. If your web server is compromised via an installation of DVWA, it is not our responsibility, it is the responsibility of the person/s who uploaded and installed it.
-
-- - -
-
-## License
-
-This file is part of Damn Vulnerable Web Application (DVWA).
-
-Damn Vulnerable Web Application (DVWA) is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-Damn Vulnerable Web Application (DVWA) is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with Damn Vulnerable Web Application (DVWA).  If not, see <https://www.gnu.org/licenses/>.
+我们不对任何人使用此应用程序 (DVWA) 的方式负责。 我们已经明确了应用程序的目的，不应被恶意使用。 我们已发出警告并采取措施防止用户将 DVWA 安装到实际生产运行的 Web 服务器上。 如果您的 Web 服务器因安装 DVWA 而受到损害，这不是我们的责任，而是上传和安装它的人的责任。
 
 - - -
 
-## Internationalisation
+## 许可
 
-This file is available in multiple languages:
-- Arabic: [العربية](README.ar.md)
-- Chinese: [简体中文](README.zh.md)
-- French: [Français](README.fr.md)
-- Persian: [فارسی](README.fa.md)
-- Portuguese: [Português](README.pt.md)
-- Spanish: [Español](README.es.md)
-- Turkish: [Türkçe](README.tr.md)
+该文件是Damn Vulnerable Web Application (DVWA) 的一部分。
 
-If you would like to contribute a translation, please submit a PR. Note though, this does not mean just run it through Google Translate and send that in, those will be rejected. Submit your translated version by adding a new 'README.xx.md' file where xx is the two-letter code of your desired language (based on [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)).
+Damn Vulnerable Web Application (DVWA)是自由软件：您可以根据自由软件基金会发布的 GNU 通用公共许可证（许可证的第 3 版，或（由您选择的）任何更高版本）重新分发和/或修改。
+
+Damn Vulnerable Web Application (DVWA) 的发布是为了希望它有用，但不（对"有用性"）做任何保证； 甚至不对适销性（MERCHANTABILITY）或针对特定目的的适用性（FITNESS FOR A PARTICULAR PURPOSE）的做任何暗示保证。 有关更多详细信息，请参阅 GNU 通用公共许可证。
+
+您应该已经随Damn Vulnerable Web Application (DVWA)收到一份GNU通用公共许可证。 如果没有，请参阅 <http://www.gnu.org/licenses/>。
 
 - - -
 
-## Download
+## 国际化
 
-While there are various versions of DVWA around, the only supported version is the latest source from the official GitHub repository. You can either clone it from the repo:
+该文件有多种语言版本： 
 
-```
+- 中文: [简体中文](README.zh.md)
+
+如果您想贡献翻译，请提交 PR。 但是请注意，这并不意味着只是简单的通过谷歌翻译并提交，这种提交将被拒绝。
+
+- - -
+
+## 下载
+
+虽然有各种版本的 DVWA，但唯一受支持的版本是来自官方 GitHub 存储仓库（repository）的最新源码。 你可以从 repo 中克隆它：
+
+``` 
 git clone https://github.com/digininja/DVWA.git
-```
+``` 
 
-Or [download a ZIP of the files](https://github.com/digininja/DVWA/archive/master.zip).
+或者 [下载文件的 ZIP](https://github.com/digininja/DVWA/archive/master.zip)。
 
 - - -
 
-## Installation
+## 安装
 
-### Installation Videos
+**请确保您的 config/config.inc.php 文件存在。 只有 config.inc.php.dist 是不够的，您必须编辑它以适应您的环境并将其重命名为 config.inc.php。  [Windows 可能会隐藏文件扩展名。](https://support.microsoft.com/en-in/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer)**
 
-- [Installing DVWA on Kali running in VirtualBox](https://www.youtube.com/watch?v=WkyDxNJkgQ4)
-- [Installing DVWA on Windows using XAMPP](https://youtu.be/Yzksa_WjnY0)
-- [Installing Damn Vulnerable Web Application (DVWA) on Windows 10](https://www.youtube.com/watch?v=cak2lQvBRAo)
+### 安装视频
+
+- [在 Windows 10 上安装 DVWA（Installing Damn Vulnerable Web Application (DVWA) on Windows 10）](https://www.youtube.com/watch?v=cak2lQvBRAo) [12:39 分钟]
 
 ### Windows + XAMPP
 
-The easiest way to install DVWA is to download and install [XAMPP](https://www.apachefriends.org/) if you do not already have a web server setup.
+如果您还没有设置 Web 服务器，安装 DVWA 的最简单方法是下载并安装 [XAMPP](https://www.apachefriends.org/en/xampp.html)。
 
-XAMPP is a very easy to install Apache Distribution for Linux, Solaris, Windows and Mac OS X. The package includes the Apache web server, MySQL, PHP, Perl, a FTP server and phpMyAdmin.
+XAMPP 是一个非常易于安装的 Apache 发行版，适用于 Linux、Solaris、Windows 和 Mac OS X。该软件包包括 Apache Web 服务器、MySQL、PHP、Perl、一个 FTP 服务器和 phpMyAdmin。
 
-This [video](https://youtu.be/Yzksa_WjnY0) walks you through the installation process for Windows but it should be similar for other OSs.
+XAMPP 可以从以下位置下载：https://www.apachefriends.org/en/xampp.html 
 
-### Docker
-
-It is possible to run DVWA with containers.
-
-Prerequisites: Docker and Docker Compose.
-
-- If you are using Docker Desktop, both of these should be already installed.
-- If you prefer Docker Engine on Linux, make sure to follow their [installation guide](https://docs.docker.com/engine/install/#server).
-
-**We provide support for the latest Docker release as shown above.**
-If you are using Linux and the Docker package that came with your package manager, it will probably work too, but support will only be best-effort.
-
-Upgrading Docker from the package manager version to upstream requires that you uninstall the old versions as seen in their manuals for [Ubuntu](https://docs.docker.com/engine/install/ubuntu/#uninstall-old-versions), [Fedora](https://docs.docker.com/engine/install/fedora/#uninstall-old-versions) and others.
-Your Docker data (containers, images, volumes, etc.) should not be affected, but in case you do run into a problem, make sure to [tell Docker](https://www.docker.com/support) and use search engines in the mean time.
-
-Then, to get started:
-
-1. Run `docker version` and `docker compose version` to see if you have Docker and Docker Compose properly installed. You should be able to see the version of Docker in the output.
-
-    For example:
-
-    ```text
-    >>> docker version
-    Client:
-     [...]
-     Version:           23.0.5
-     [...]
-
-    Server: Docker Desktop 4.19.0 (106363)
-     Engine:
-      [...]
-      Version:          23.0.5
-      [...]
-
-    >>> docker compose version
-    Docker Compose version v2.17.3
-    ```
-
-    If you don't see anything or get a command not found error, follow the prerequisites to setup Docker and Docker Compose.
-
-2. Clone or download this repository and extract (see [Download](#download)).
-3. Open a terminal of your choice and change its working directory to `DVWA`.
-4. `docker compose up -d`.
-
-DVWA is now available at `http://localhost:4280`.
-
-**Notice that for running DVWA in containers, the web server is listening on port 4280 instead of the usual port of 80.**
-For more information on this decision, see [I want to run DVWA on a different port](#i-want-to-run-dvwa-on-a-different-port).
+只需解压缩 dvwa.zip，将解压缩的文件放在您的公共 html 文件夹中，然后使用浏览器访问：`http://127.0.0.1/dvwa/setup.php`
 
 ### Linux Packages
 
-If you are using a Debian based Linux distribution, you will need to install the following packages _(or their equivalent)_:
+如果您使用的是基于 Debian 的 Linux 发行版，则需要安装以下软件包 _（或与它们具有相同功能的软件包）_：
 
-- apache2
-- libapache2-mod-php
-- mariadb-server
-- mariadb-client
-- php php-mysqli
-- php-gd
+`apt-get -y install apache2 mariadb-server php php-mysqli php-gd libapache2-mod-php` 
 
-I would recommend doing an update before this, just so you make sure you are going to get the latest version of everything.
+该站点在使用 MySQL 时也可正常运行，但我们强烈推荐 MariaDB。因为它开箱即用，而您必须进行配置更改才能使 MySQL 正常工作。
 
-```
-apt update
-apt install -y apache2 mariadb-server mariadb-client php php-mysqli php-gd libapache2-mod-php
-```
+### 数据库设置
 
-The site will work with MySQL instead of MariaDB but we strongly recommend MariaDB as it works out of the box whereas you have to make changes to get MySQL to work correctly.
+要设置数据库，只需单击主菜单中的`Setup DVWA`按钮，然后单击`Create / Reset Database`按钮。 这将为您创建/重置数据库，并填入一些数据。
 
-## Configurations
+如果您在尝试创建数据库时收到错误消息，请确保您在 `./config/config.inc.php` 中的数据库凭据是正确的。  *config.inc.php.dist 仅作为示例，./config/config.inc.php 中的内容不必与其相同。*
 
-### Config File
-
-DVWA ships with a dummy copy of its config file which you will need to copy into place and then make the appropriate changes. On Linux, assuming you are in the DVWA directory, this can be done as follows:
-
-`cp config/config.inc.php.dist config/config.inc.php`
-
-On Windows, this can be a bit harder if you are hiding file extensions, if you are unsure about this, this blog post explains more about it:
-
-[How to Make Windows Show File Extensions](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)
-
-### Database Setup
-
-To set up the database, simply click on the `Setup DVWA` button in the main menu, then click on the `Create / Reset Database` button. This will create / reset the database for you with some data in.
-
-If you receive an error while trying to create your database, make sure your database credentials are correct within `./config/config.inc.php`. *This differs from config.inc.php.dist, which is an example file.*
-
-The variables are set to the following by default:
+变量默认设置如下： 
 
 ```php
-$_DVWA[ 'db_server'] = '127.0.0.1';
-$_DVWA[ 'db_port'] = '3306';
 $_DVWA[ 'db_user' ] = 'dvwa';
 $_DVWA[ 'db_password' ] = 'p@ssw0rd';
 $_DVWA[ 'db_database' ] = 'dvwa';
 ```
 
-Note, if you are using MariaDB rather than MySQL (MariaDB is default in Kali), then you can't use the database root user, you must create a new database user. To do this, connect to the database as the root user then use the following commands:
+注意，如果你使用的是 MariaDB 而不是 MySQL（ Kali 默认使用 MariaDB ），那么你不能使用数据库 root 用户，你必须创建一个新的数据库用户。 为此，请以 root 用户身份连接到数据库，然后使用以下命令：
 
 ```mysql
 mysql> create database dvwa;
@@ -191,184 +113,81 @@ mysql> flush privileges;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
-### Disable Authentication
+### 其他配置
 
-Some tools don't work well with authentication so can't be used with DVWA. To get around this, there is a config option to disable authentication checking. To do this, simply set the following in the config file:
+根据您的操作系统以及 PHP 版本，您可能希望更改默认配置。 相关文件的位置因机器而异。
 
-```php
-$_DVWA[ 'disable_authentication' ] = true;
-```
+**文件夹权限**：
 
-You will also need to set the security level to one that is appropriate to the testing you want to do:
+* `./hackable/uploads/` - 需要允许web服务可写（用于文件上传）。
+* `./external/phpids/0.6/lib/IDS/tmp/phpids_log.txt` - 需要允许web服务可写（如果你想使用 PHPIDS）。
 
-```php
-$_DVWA[ 'default_security_level' ] = 'low';
-```
+**PHP配置**:
 
-In this state, you can access all the features without needing to log in and set any cookies.
+* `allow_url_include = on` - 允许远程文件包含 (RFI) [[allow_url_include](https://secure.php.net/manual/en/filesystem.configuration.php#ini.allow-url-include)]
+* `allow_url_fopen = on` - 允许远程文件包含 (RFI) [[allow_url_fopen](https://secure.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen)]
+* `safe_mode = off` - （如果 PHP <= v5.4）允许 SQL 注入（SQLi） [[safe_mode](https://secure.php.net/manual/en/features.safe-mode.php)]
+* `magic_quotes_gpc = off` - （如果 PHP <= v5.4）允许 SQL 注入（SQLi） [[magic_quotes_gpc](https://secure.php.net/manual/en/security.magicquotes.php)] 
+* `display_errors = off` - （可选）隐藏 PHP 警告消息以使其不那么冗长 [[display_errors](https://secure.php.net/manual/en/errorfunc.configuration.php#ini.display-errors)]
 
-### Folder Permissions
+**文件: `config/config.inc.php`**:
+* `$_DVWA[ 'recaptcha_public_key' ]` & `$_DVWA[ 'recaptcha_private_key' ]` - 这些值需要从https://www.google.com/recaptcha/admin/create 生成
 
-* `./hackable/uploads/` - Needs to be writeable by the web service (for File Upload).
+### 默认的凭证
 
-### PHP configuration
+**默认 username = `admin`**
 
-On Linux systems, likely found in `/etc/php/x.x/fpm/php.ini` or `/etc/php/x.x/apache2/php.ini`.
+**默认 password = `password`**
 
-* To allow  Remote File Inclusions (RFI):
-    * `allow_url_include = on` [[allow_url_include](https://secure.php.net/manual/en/filesystem.configuration.php#ini.allow-url-include)]
-    * `allow_url_fopen = on` [[allow_url_fopen](https://secure.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen)]
+_...很容易被暴力破解；)_
 
-* To make sure PHP shows all error messages:
-    * `display_errors = on` [[display_errors](https://secure.php.net/manual/en/errorfunc.configuration.php#ini.display-errors)]
-    * `display_startup_errors = on` [[display_startup_errors](https://secure.php.net/manual/en/errorfunc.configuration.php#ini.display-startup-errors)]
+登录 URL：http://127.0.0.1/login.php
 
-Make sure you restart the php service or Apache after making the changes.
-
-### reCAPTCHA
-
-This is only required for the "Insecure CAPTCHA" lab, if you aren't playing with that lab, you can ignore this section.
-
-Generated a pair of API keys from <https://www.google.com/recaptcha/admin/create>.
-
-These then go in the following sections of `./config/config.inc.php`:
-
-* `$_DVWA[ 'recaptcha_public_key' ]`
-* `$_DVWA[ 'recaptcha_private_key' ]`
-
-### Default Credentials
-
-**Default username = `admin`**
-
-**Default password = `password`**
-
-_...can easily be brute forced ;)_
-
-Login URL: http://127.0.0.1/login.php
-
-_Note: This will be different if you installed DVWA into a different directory._
+_注意：如果您将 DVWA 安装到不同的目录中，上述登录 URL 将有所不同。_
 
 - - -
 
-## Troubleshooting
+## Docker容器
+- [dockerhub 页面](https://hub.docker.com/r/vulnerables/web-dvwa/)
+`docker run --rm -it -p 80:80 vulnerables/web-dvwa`
 
-These assume you are on a Debian based distro, such as Debian, Ubuntu and Kali. For other distros, follow along, but update the command where appropriate.
+由于老版本的 MySQL 问题，请确保您正在使用 aufs。 运行 `docker info` 来检查你的存储驱动程序。 如果它不是aufs，请更改它为aufs。 每个操作系统都有关于如何执行此操作的指南，但它们有所不同，因此我们不再此赘述。
 
-### Containers
+- - -
 
-#### I want to access the logs
+## 故障排除
 
-If you are using Docker Desktop, logs can be accessed from the graphical application.
-Some minor details may change with newer versions, but the access method should be the same.
+以下的故障排除操作，假设您使用的是基于 Debian 的发行版，例如 Debian、Ubuntu 和 Kali。 对于其他发行版，可参考执行，但需要适当更换命令。
 
-![Overview of DVWA compose](./docs/graphics/docker/overview.png)
-![Viewing DVWA logs](docs/graphics/docker/detail.png)
+### 配置数据库时的"Access denied"错误
 
-Logs can also be accessed from the terminal.
-
-1. Open a terminal and change its working directory to DVWA
-2. Show the merged logs
-
-    ```shell
-    docker compose logs
-    ```
-
-   In case you want to export the logs to a file, e.g. `dvwa.log`
-
-   ```shell
-   docker compose logs >dvwa.log
-   ```
-
-#### I want to run DVWA on a different port
-
-We don't use port 80 by default for a few reasons:
-
-- Some users might already be running something on port 80.
-- Some users might be using a rootless container engine (like Podman), and 80 is a privileged port (< 1024). Additional configuration (e.g. setting `net.ipv4.ip_unprivileged_port_start`) is required, but you will have to research on your own.
-
-You can expose DVWA on a different port by changing the port binding in the `compose.yml` file.
-For example, you can change
-
-```yml
-ports:
-  - 4280:80
-```
-
-to
-
-```yml
-ports:
-  - 8806:80
-```
-
-DVWA is now accessible at `http://localhost:8806`.
-
-#### DVWA auto starts when Docker runs
-
-The included [`compose.yml`](./compose.yml) file automatically runs DVWA and its database when Docker starts.
-
-To disable this, you can delete or comment out the `restart: unless-stopped` lines in the [`compose.yml`](./compose.yml) file.
-
-If you want to disable this behavior temporarily, you can run `docker compose stop`, or use Docker Desktop, find `dvwa` and click Stop.
-Additionally, you can delete the containers, or run `docker compose down`.
-
-### Log files
-
-On Linux systems Apache generates two log files by default, `access.log` and `error.log` and on Debian based system these are usually found in `/var/log/apache2/`.
-
-When submitting error reports, problems, anything like that, please include at least the last five lines from each of these files. On Debian based systems you can get these like this:
-
-```
-tail -n 5 /var/log/apache2/access.log /var/log/apache2/error.log
-```
-
-### I browsed to the site and got a 404
-
-If you are having this problem you need to understand file locations. By default, the Apache document root (the place it starts looking for web content) is `/var/www/html`. If you put the file `hello.txt` in this directory, to access it you would browse to `http://localhost/hello.txt`.
-
-If you created a directory and put the file in there - `/var/www/html/mydir/hello.txt` - you would then need to browse to `http://localhost/mydir/hello.txt`.
-
-Linux is by default case sensitive and so in the example above, if you tried to browse to any of these, you would get a `404 Not Found`:
-
-- `http://localhost/MyDir/hello.txt`
-- `http://localhost/mydir/Hello.txt`
-- `http://localhost/MYDIR/hello.txt`
-
-How does this affect DVWA? Most people use git to checkout DVWA into `/var/www/html`, this gives them the directory `/var/www/html/DVWA/` with all the DVWA files inside it. They then browse to `http://localhost/` and get either a `404` or the default Apache welcome page. As the files are in DVWA, you must browse to `http://localhost/DVWA`.
-
-The other common mistake is to browse to `http://localhost/dvwa` which will give a `404` because `dvwa` is not `DVWA` as far as Linux directory matching is concerned.
-
-So after setup, if you try to visit the site and get a `404`, think about where you installed the files to, where they are relative to the document root, and what the case of the directory you used is.
-
-### "Access denied" running setup
-
-If you see the following when running the setup script it means the username or password in the config file do not match those configured on the database:
+如果您在配置数据库时看到以下内容，则表示配置文件（./config/config.inc.php）中的用户名或密码，与数据库中配置的用户名或密码不匹配：
 
 ```
 Database Error #1045: Access denied for user 'notdvwa'@'localhost' (using password: YES).
 ```
 
-The error is telling you that you are using the username `notdvwa`.
+该错误告诉您，您正在使用用户名`notdvwa`。
 
-The following error says you have pointed the config file at the wrong database.
+以下错误表示，您在配置文件中设置了错误的数据库。
 
 ```
 SQL: Access denied for user 'dvwa'@'localhost' to database 'notdvwa'
 ```
 
-It is saying that you are using the user `dvwa` and trying to connect to the database `notdvwa`.
+这表示您正在使用用户 `dvwa` 并试图连接到数据库 `notdvwa`。
 
-The first thing to do is to double check what you think you put in the config file is what is actually there.
+首先要做的，是再次确认您配置文件中的内容是否真的如您所想。
 
-If it matches what you expect, the next thing to do is to check you can log in as the user on the command line. Assuming you have a database user of `dvwa` and a password of `p@ssw0rd`, run the following command:
+如果它符合您的预期，接下来要做的是检查，您是否可以使用命令行，以您配置的用户身份登录数据库。 假设你的数据库用户是 `dvwa`，密码是 `p@ssw0rd`，运行以下命令： 
 
 ```
 mysql -u dvwa -pp@ssw0rd -D dvwa
 ```
 
-*Note: There is no space after the -p*
+*注意：-p后没有空格*
 
-If you see the following, the password is correct:
+如果您看到以下内容，则密码是正确的：
 
 ```
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -382,51 +201,49 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [dvwa]>
 ```
 
-As you can connect on the command line, it is likely something wrong in the config file, double check that and then raise an issue if you still can't get things working.
+由于您可以在命令行上进行连接，因此配置文件中可能有问题，请仔细检查。如果仍然无法正常工作，请在 GitHub 上提交issue。
 
-If you see the following, the username or password you are using is wrong. Repeat the [Database Setup](#database-setup) steps and make sure you use the same username and password throughout the process.
+如果您看到以下内容，则您使用的用户名或密码有误。 重复 [数据库设置](#数据库设置) 步骤，并确保在整个过程中使用相同的用户名和密码。
 
 ```
 ERROR 1045 (28000): Access denied for user 'dvwa'@'localhost' (using password: YES)
 ```
 
-If you get the following, the user credentials are correct but the user does not have access to the database. Again, repeat the setup steps and check the database name you are using.
+如果您得到以下信息，则用户凭据正确，但用户无权访问数据库。 再次重复设置步骤并检查您正在使用的数据库名称。
 
 ```
 ERROR 1044 (42000): Access denied for user 'dvwa'@'localhost' to database 'dvwa'
 ```
 
-The final error you could get is this:
+最后一个您可能遇到的错误是：
 
 ```
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 ```
 
-This is not an authentication issue but tells you that the database server is not running. Start it with the following
+这不是身份验证问题，而是告诉您数据库服务器没有运行。 如下启动数据库服务器：
 
 ```sh
 sudo service mysql start
 ```
 
-### Unknown authentication method
+### Unknown authentication method错误
 
-With the most recent versions of MySQL, PHP can no longer talk to the database in its default configuration. If you try to run the setup script and get the following message it means you have configuration.
+PHP 无法再与最新版本的 MySQL 默认配置中的数据库通信。 如果您尝试运行配置脚本并收到以下消息，则表示您正在使用这个默认配置。
 
 ```
 Database Error #2054: The server requested authentication method unknown to the client.
 ```
 
-You have two options, the easiest is to uninstall MySQL and install MariaDB. The following is the official guide from the MariaDB project:
+您有两个选择，最简单的是卸载 MySQL 并安装 MariaDB。 以下是来自 MariaDB 项目的官方指南：
 
 <https://mariadb.com/resources/blog/how-to-migrate-from-mysql-to-mariadb-on-linux-in-five-steps/>
 
-Alternatively, follow these steps:
-
-1. As root, edit the following file: `/etc/mysql/mysql.conf.d/mysqld.cnf`
-1. Under the line `[mysqld]`, add the following:
-  `default-authentication-plugin=mysql_native_password`
-1. Restart the database: `sudo service mysql restart`
-1. Check the authentication method for your database user:
+或者，按照以下步骤操作：
+1. 以 root 用户身份编辑以下文件：`/etc/mysql/mysql.conf.d/mysqld.cnf`
+2. 在 `[mysqld]` 行下，添加以下内容： `default-  authentication-plugin=mysql_native_password`
+3. 重启数据库：`sudo service mysql restart`
+4. 检查数据库用户的身份验证方法：
 
     ```sql
     mysql> select Host,User, plugin from mysql.user where mysql.user.User = 'dvwa';
@@ -437,15 +254,12 @@ Alternatively, follow these steps:
     +-----------+------------------+-----------------------+
     1 rows in set (0.00 sec)
     ```
-
-1. You'll likely see `caching_sha2_password`. If you do, run the following command:
+5. 你可能会看到 `caching_sha2_password`。 如果是这样，请运行以下命令：
 
     ```sql
     mysql> ALTER USER dvwa@localhost IDENTIFIED WITH mysql_native_password BY 'p@ssw0rd';
     ```
-
-1. Re-running the check, you should now see `mysql_native_password`.
-
+6. 重新运行检查，您现在应该看到`mysql_native_password`。
     ```sql
     mysql> select Host,User, plugin from mysql.user where mysql.user.User = 'dvwa';
     +-----------+------+-----------------------+
@@ -456,103 +270,89 @@ Alternatively, follow these steps:
     1 row in set (0.00 sec)
     ```
 
-After all that, the setup process should now work as normal.
+经过以上步骤，设置过程现在应该可以正常工作了。
 
-If you want more information see the following page: <https://www.php.net/manual/en/mysqli.requirements.php>.
+如果您想了解更多信息，请参阅以下页面：<https://www.php.net/manual/en/mysqli.requirements.php>。
 
-### Database Error #2002: No such file or directory.
+### 数据库错误 Error #2002: No such file or directory.
 
-The database server is not running. In a Debian based distro this can be done with:
+数据库服务器没有运行。 在基于 Debian 的发行版中，这可以通过以下方式完成：
 
 ```sh
 sudo service mysql start
 ```
 
-### Errors "MySQL server has gone away" and "Packets out of order"
+### "MySQL server has gone away" 和 "Packets out of order" 错误
 
-There are a few reasons you could be getting these errors, but the most likely is the version of database server you are running is not compatible with the version of PHP.
+出现这些错误的原因有多种，但最有可能的原因是您运行的数据库服务器版本与 PHP 版本不兼容。
 
-This is most commonly found when you are running the latest version of MySQL as PHP and it do not get on well. Best advice, ditch MySQL and install MariaDB as this is not something we can support.
+最常见的是，你运行了最新版本的 MySQL 与 PHP 搭配部署，而这两者并不十分兼容。最好的建议是，放弃 MySQL 并安装 MariaDB，因为这（译注：使用最新版MySQL）不是我们可以支持的。
 
-For more information, see:
+有关更多信息，请参阅：
 
 <https://www.ryadel.com/en/fix-mysql-server-gone-away-packets-order-similar-mysql-related-errors/>
 
-### Command Injection won't work
+### SQL注入在 PHP v5.2.6.上不正常
 
-Apache may not have high enough privileges to run commands on the web server. If you are running DVWA under Linux make sure you are logged in as root. Under Windows log in as Administrator.
+PHP 5.x 的维护已于 2019 年 1 月终止，因此我们建议您使用当前 7.x 版本运行 DVWA，如果您一定要使用 5.x ……
 
-### Why can't the database connect on CentOS?
+如果您使用的是 PHP v5.2.6 或更高版本，则需要执行以下操作才能使 SQL 注入和其他漏洞发挥作用。
 
-You may be running into problems with SELinux.  Either disable SELinux or run this command to allow the web server to talk to the database:
+在`.htaccess`中：
+
+将以下设置：
+
+```php
+<IfModule mod_php5.c>
+    php_flag magic_quotes_gpc off
+    #php_flag allow_url_fopen on
+    #php_flag allow_url_include on
+</IfModule>
+```
+
+替换为：
+
+```php
+<IfModule mod_php5.c>
+    magic_quotes_gpc = Off
+    allow_url_fopen = On
+    allow_url_include = On
+</IfModule>
+```
+
+### 命令行注入 不工作
+
+-A. Apache 可能没有足够的权限在 Web 服务器上运行命令。 如果您在 Linux 下运行 DVWA，请确保您以 root 身份登录。 在 Windows 下以管理员身份登录。
+
+### CentOS上为什么不能连接数据库？
+
+您可能遇到 SELinux 的问题。 禁用 SELinux 或运行此命令以允许 Web 服务器与数据库通信：
 
 ```
 setsebool -P httpd_can_network_connect_db 1
 ```
 
-### Anything Else
+### 其他事项
 
-For the latest troubleshooting information please read both open and closed tickets in the git repo:
+有关最新的故障排除信息，请阅读 GitHub Issues 中仍开放或已关闭的问题：
 
 <https://github.com/digininja/DVWA/issues>
 
-Before submitting a ticket, please make sure you are running the latest version of the code from the repo. This is not the latest release, this is the latest code from the master branch.
+在提交issue之前，请确保您正在运行仓库（repo）中最新版本的代码。注意：不是最新发布 (release) 版本，而是 master 分支的最新代码。
 
-If raising a ticket, please submit at least the following information:
+如果提交issue，请至少包含以下信息： 
 
-- Operating System
-- The last 5 lines from the web server error log directly after whatever error you are reporting occurs
-- If it is a database authentication problem, go through the steps above and screenshot each step. Submit these along with a screenshot of the section of the config file showing the database user and password.
-- A full description of what is going wrong, what you expect to happen, and what you have tried to do to fix it. "login broken" is no enough for us to understand your problem and to help fix it.
-
-- - -
-
-## Tutorials
-
-I am going to try to put together some tutorial videos that walk through some of the vulnerabilities and show how to detect them and then how to exploit them. Here are the ones I've made so far:
-
-[Finding and Exploiting Reflected XSS](https://youtu.be/V4MATqtdxss)
+- 操作系统 
+- 您正在报告的错误发生时，紧接着来自 Web 服务器错误日志的最后 5 行 
+- 如果是数据库身份验证问题，请执行上文中的步骤并对每个步骤进行截图。提交这些截图，同时提交数据库配置文件中，用户和密码部分的屏幕截图。
+- 完整描述出了什么问题，您期望发生什么，以及您已经采取了什么措施。 类似"登录中断"这种描述，不足以让我们了解您的问题并帮助解决它。
 
 - - -
 
-## SQLite3 SQL Injection
+## 链接
 
-_Support for this is limited, before raising issues, please ensure you are prepared to work on debugging, do not simply claim "it does not work"._
+主页: <http://www.dvwa.co.uk/>
 
-By default, SQLi and Blind SQLi are done against the MariaDB/MySQL server used by the site but it is possible to switch to do the SQLi testing against SQLite3 instead.
-
-I am not going to cover how to get SQLite3 working with PHP, but it should be a simple case of installing the `php-sqlite3` package and making sure it is enabled.
-
-To make the switch, simply edit the config file and add or edit these lines:
-
-```
-$_DVWA["SQLI_DB"] = "sqlite";
-$_DVWA["SQLITE_DB"] = "sqli.db";
-```
-
-By default it uses the file `database/sqli.db`, if you mess it up, simply copy `database/sqli.db.dist` over the top.
-
-The challenges are exactly the same as for MySQL, they just run against SQLite3 instead.
-
-- - -
-
-👨‍💻 Contributors
------
-
-Thanks for all your contributions and keeping this project updated. :heart:
-
-If you have an idea, some kind of improvement or just simply want to collaborate, you are welcome to contribute and participate in the Project, feel free to send your PR.
-
-<p align="center">
-<a href="https://github.com/digininja/DVWA/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=digininja/DVWA&max=500">
-</a>
-</p>
-
-- - -
-
-## Links
-
-Project Home: <https://github.com/digininja/DVWA>
+项目主页: <https://github.com/digininja/DVWA>
 
 *Created by the DVWA team*

@@ -39,11 +39,11 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		// Can we move the file to the web root from the temp folder?
 		if( rename( $temp_file, ( getcwd() . DIRECTORY_SEPARATOR . $target_path . $target_file ) ) ) {
 			// Yes!
-			$html .= "<pre><a href='{$target_path}{$target_file}'>{$target_file}</a> succesfully uploaded!</pre>";
+			$html .= "<pre><a href='${target_path}${target_file}'>${target_file}</a> 上传成功!</pre>";
 		}
 		else {
 			// No
-			$html .= '<pre>Your image was not uploaded.</pre>';
+			$html .= '<pre>你的文件没有被上传.</pre>';
 		}
 
 		// Delete any temp files
@@ -52,7 +52,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 	}
 	else {
 		// Invalid file
-		$html .= '<pre>Your image was not uploaded. We can only accept JPEG or PNG images.</pre>';
+		$html .= '<pre>你的文件没有上传成功，我们只接受jpeg或png格式的文件.</pre>';
 	}
 }
 

@@ -8,11 +8,11 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 	// Can we move the file to the upload folder?
 	if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
 		// No
-		$html .= '<pre>Your image was not uploaded.</pre>';
+		$html .= '<pre>你的文件没有被上传.</pre>';
 	}
 	else {
 		// Yes!
-		$html .= "<pre>{$target_path} succesfully uploaded!</pre>";
+		$html .= "<pre>{$target_path} 上传成功!</pre>";
 	}
 }
 

@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: Reflected Cross Site Scripting (XSS)' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -14,7 +14,7 @@ $page[ 'source_button' ] = 'xss_r';
 dvwaDatabaseConnect();
 
 $vulnerabilityFile = '';
-switch( dvwaSecurityLevelGet() ) {
+switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
 		$vulnerabilityFile = 'low.php';
 		break;
@@ -33,14 +33,14 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_r/source/{$vulnerabili
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: Reflected Cross Site Scripting (XSS)</h1>
+	<h1>漏洞: 反射型XSS（Reflected Cross Site Scripting）</h1>
 
 	<div class=\"vulnerable_code_area\">
 		<form name=\"XSS\" action=\"#\" method=\"GET\">
 			<p>
-				What's your name?
+				你叫什么名字?
 				<input type=\"text\" name=\"name\">
-				<input type=\"submit\" value=\"Submit\">
+				<input type=\"submit\" value=\"提交\">
 			</p>\n";
 
 if( $vulnerabilityFile == 'impossible.php' )
@@ -51,7 +51,7 @@ $page[ 'body' ] .= "
 		{$html}
 	</div>
 
-	<h2>More Information</h2>
+	<h2>更多信息</h2>
 	<ul>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/xss/' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/xss-filter-evasion-cheatsheet' ) . "</li>

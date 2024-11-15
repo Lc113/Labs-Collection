@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( ) );
+dvwaPageStartup( array( 'phpids' ) );
 
 dvwaDatabaseConnect();
 
@@ -45,7 +45,7 @@ if( isset( $_POST[ 'Login' ] ) ) {
 	}
 
 	// Login failed
-	dvwaMessagePush( 'Login failed' );
+	dvwaMessagePush( '用户名或密码错误、' );
 	dvwaRedirect( 'login.php' );
 }
 
@@ -66,7 +66,7 @@ echo "<!DOCTYPE html>
 
 		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
 
-		<title>Login :: Damn Vulnerable Web Application (DVWA)</title>
+		<title>Login :: Damn Vulnerable Web Application (DVWA) v" . dvwaVersionGet() . "</title>
 
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/login.css\" />
 
@@ -92,14 +92,14 @@ echo "<!DOCTYPE html>
 
 	<fieldset>
 
-			<label for=\"user\">Username</label> <input type=\"text\" class=\"loginInput\" size=\"20\" name=\"username\"><br />
+			<label for=\"user\">用户名（默认admin)</label> <input type=\"text\" class=\"loginInput\" size=\"20\" name=\"username\"><br />
 
 
-			<label for=\"pass\">Password</label> <input type=\"password\" class=\"loginInput\" AUTOCOMPLETE=\"off\" size=\"20\" name=\"password\"><br />
+			<label for=\"pass\">密码(默认password)</label> <input type=\"password\" class=\"loginInput\" AUTOCOMPLETE=\"off\" size=\"20\" name=\"password\"><br />
 
 			<br />
 
-			<p class=\"submit\"><input type=\"submit\" value=\"Login\" name=\"Login\"></p>
+			<p class=\"submit\"><input type=\"submit\" value=\"点击登陆\" name=\"Login\"></p>
 
 	</fieldset>
 

@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: File Inclusion' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -14,7 +14,7 @@ $page[ 'source_button' ] = 'fi';
 dvwaDatabaseConnect();
 
 $vulnerabilityFile = '';
-switch( dvwaSecurityLevelGet() ) {
+switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
 		$vulnerabilityFile = 'low.php';
 		break;

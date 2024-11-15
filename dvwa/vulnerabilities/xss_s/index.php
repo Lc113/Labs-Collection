@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: Stored Cross Site Scripting (XSS)' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -19,7 +19,7 @@ if (array_key_exists ("btnClear", $_POST)) {
 }
 
 $vulnerabilityFile = '';
-switch( dvwaSecurityLevelGet() ) {
+switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
 		$vulnerabilityFile = 'low.php';
 		break;
@@ -38,24 +38,24 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_s/source/{$vulnerabili
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>
+	<h1>漏洞:存储型XSS（Stored Cross Site Scripting）</h1>
 
 	<div class=\"vulnerable_code_area\">
 		<form method=\"post\" name=\"guestform\" \">
 			<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">
 				<tr>
-					<td width=\"100\">Name *</td>
+					<td width=\"100\">名字 *</td>
 					<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"10\"></td>
 				</tr>
 				<tr>
-					<td width=\"100\">Message *</td>
+					<td width=\"100\">消息 *</td>
 					<td><textarea name=\"mtxMessage\" cols=\"50\" rows=\"3\" maxlength=\"50\"></textarea></td>
 				</tr>
 				<tr>
 					<td width=\"100\">&nbsp;</td>
 					<td>
-						<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />
-						<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />
+						<input name=\"btnSign\" type=\"submit\" value=\"签名 Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />
+						<input name=\"btnClear\" type=\"submit\" value=\"清除 Guestbook\" onClick=\"return confirmClearGuestbook();\" />
 					</td>
 				</tr>
 			</table>\n";
@@ -72,7 +72,7 @@ $page[ 'body' ] .= "
 	" . dvwaGuestbook() . "
 	<br />
 
-	<h2>More Information</h2>
+	<h2>更多参考信息</h2>
 	<ul>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/xss' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/xss-filter-evasion-cheatsheet' ) . "</li>

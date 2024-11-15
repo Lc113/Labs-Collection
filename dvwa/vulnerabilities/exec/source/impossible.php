@@ -31,7 +31,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 	}
 	else {
 		// Ops. Let the user name theres a mistake
-		$html .= '<pre>ERROR: You have entered an invalid IP.</pre>';
+		$html .= '<pre>错误：你输入了一个错误的IP.</pre>';
 	}
 }
 

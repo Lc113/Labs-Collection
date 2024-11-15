@@ -34,11 +34,11 @@ if( isset( $_GET[ 'Change' ] ) ) {
 		$data->execute();
 
 		// Feedback for the user
-		$html .= "<pre>Password Changed.</pre>";
+		$html .= "<pre>密码已更改.</pre>";
 	}
 	else {
 		// Issue with passwords matching
-		$html .= "<pre>Passwords did not match or current password incorrect.</pre>";
+		$html .= "<pre>二次密码不匹配或原密码错误.</pre>";
 	}
 }
 

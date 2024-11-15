@@ -18,8 +18,8 @@ $page[ 'body' ] .= "
 }
 $page[ 'body' ] .= '
 <form name="csp" method="POST">
-	<p>Whatever you enter here gets dropped directly into the page, see if you can get an alert box to pop up.</p>
+	<p>不管你在这里输入什么都可以得到正确的页面, 看看你能不能得到一个js弹窗警告（Alert函数）.</p>
 	<input size="50" type="text" name="include" value="" id="include" />
-	<input type="submit" value="Include" />
+	<input type="submit" value="嵌入" />
 </form>
 ';

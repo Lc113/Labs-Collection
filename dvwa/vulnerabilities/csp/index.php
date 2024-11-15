@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: Content Security Policy (CSP) Bypass' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -14,7 +14,7 @@ $page[ 'source_button' ] = 'csp';
 dvwaDatabaseConnect();
 
 $vulnerabilityFile = '';
-switch( dvwaSecurityLevelGet() ) {
+switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
 		$vulnerabilityFile = 'low.php';
 		break;
@@ -31,8 +31,8 @@ switch( dvwaSecurityLevelGet() ) {
 
 $page[ 'body' ] = <<<EOF
 <div class="body_padded">
-	<h1>Vulnerability: Content Security Policy (CSP) Bypass</h1>
-
+	<h1>漏洞:绕过内容安全策略 （CSP Bypass）</h1>
+	<h2>Content Security Policy (CSP) Bypass</h2>
 	<div class="vulnerable_code_area">
 EOF;
  
@@ -43,13 +43,13 @@ $page[ 'body' ] .= <<<EOF
 EOF;
 
 $page[ 'body' ] .= "
-	<h2>More Information</h2>
+	<h2>更多参考信息</h2>
 	<ul>
 		<li>" . dvwaExternalLinkUrlGet( 'https://content-security-policy.com/', "Content Security Policy Reference" ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP', "Mozilla Developer Network - CSP: script-src") . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://blog.mozilla.org/security/2014/10/04/csp-for-the-web-we-have/', "Mozilla Security Blog - CSP for the web we have" ) . "</li>
 	</ul>
-	<p><i>Module developed by <a href='https://twitter.com/digininja'>Digininja</a>.</i></p>
+	<p><i>模块开发者： <a href='https://twitter.com/digininja'>Digininja</a>.</i></p>
 </div>\n";
 
 dvwaHtmlEcho( $page );

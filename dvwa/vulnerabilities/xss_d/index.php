@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: DOM Based Cross Site Scripting (XSS)' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -14,7 +14,7 @@ $page[ 'source_button' ] = 'xss_d';
 dvwaDatabaseConnect();
 
 $vulnerabilityFile = '';
-switch( dvwaSecurityLevelGet() ) {
+switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
 		$vulnerabilityFile = 'low.php';
 		break;
@@ -39,11 +39,11 @@ if ($vulnerabilityFile == 'impossible.php') {
 
 $page[ 'body' ] = <<<EOF
 <div class="body_padded">
-	<h1>Vulnerability: DOM Based Cross Site Scripting (XSS)</h1>
-
+	<h1>漏洞: DOM型XSS</h1>
+	<h2>DOM Based Cross Site Scripting(XSS)</h2>
 	<div class="vulnerable_code_area">
  
- 		<p>Please choose a language:</p>
+ 		<p>请选择语言:</p>
 
 		<form name="XSS" method="GET">
 			<select name="default">
@@ -60,13 +60,13 @@ $page[ 'body' ] = <<<EOF
 					document.write("<option value='German'>German</option>");
 				</script>
 			</select>
-			<input type="submit" value="Select" />
+			<input type="submit" value="选择" />
 		</form>
 	</div>
 EOF;
 
 $page[ 'body' ] .= "
-	<h2>More Information</h2>
+	<h2>更多参考信息</h2>
 	<ul>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/xss/' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/DOM_Based_XSS' ) . "</li>
